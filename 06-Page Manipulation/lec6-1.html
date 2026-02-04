@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h1 class="special"></h1>
+    <h1 id="demo"></h1>
+    <ul>
+        <li>Item 1</li>  
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        //inline javascript (querySelectorAll - later)
+        document.querySelector("h1").innerText = "Changed by JS";
+        document.querySelector(".special").innerText = "Changed by JS (class)";
+        document.querySelector("#demo").innerText = "Changed by JS (ID)";
+        document.querySelector("ul li:nth-of-type(2)").innerText = "Changed by JS (selector)";
+
+        //Old Way
+        document.getElementsByTagName("h2")[0].innerText = "Changed again";
+        document.getElementById("demo2").innerText="Changed again(ID)";
+        document.getElementsByClassName("special2")[0].innerText = "Changed again (class)";
+        document.getElementsByTagName("li")[2].innerText = "Changed Again";
+
+        console.log(document.getElementsByTagName("h2")[0].innerText);
+        var data = document.querySelector("h1")[0].innerText;
+        console.log("Text in h1 is ", data);
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Bill{
+            #amt; 
+            #discPer; 
+
+            constructor(amt = 0, discPer = 0){
+                this.setData(amt, discPer);
+            }
+
+            //getter / setter pattern
+            get amount(){
+                return this.#amt;
+            }
+
+            set amount(value){
+                if (value <= 0) {
+                    throw new Error("Invalid Amount");
+                }
+                this.#amt = value;
+            }
+
+            //this follows object orieted principle - abstraction
+            get discountPercent(){
+                return this.#discPer;
+            }
+
+            set discountPercent(value){
+                if(value < 0 || value > 100){
+                    throw new Error("Invalid discount percent");
+                }
+                this.#discPer = value;
+            }
+
+            setData(amt = 0, discPer = 0){
+                this.amount = amt;
+                this.discountPercent = discPer;
+            }
+
+            calcDiscount(){
+                return this.#amt * this.#discPer / 100;
+            }
+
+            calcTotal(){
+                return this.#amt - this.calcDiscount();
+            }
+        }
+        var b = new Bill();
+        b.amount = -1;
+        console.log(b.calcTotal());
+    </script>
+</body>
+</html>

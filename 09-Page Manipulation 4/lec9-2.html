@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width:200px;
+            height: 200px;
+            background-color: red;
+        }
+        .border{
+            border:5px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+    <button id="btnAddBorder">Add Border</button>
+    <button id="btnRemovalBorder">Remove Border</button>
+
+    <script>
+        var bx = document.querySelector(".box");
+
+        document.querySelector("#btnAddBorder").addEventListener("click", () => {
+            bx.classList.add("border");
+        });
+
+        document.querySelector("#btnRemovalBorder").addEventListener("click", () => {
+            bx.classList.remove("border");
+        });
+    </script>
+
+</body>
+</html>

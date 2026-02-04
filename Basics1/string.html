@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Example</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <button onclick="checkUserName()">submit</button>
+    <p id="output"></p>
+<script>
+    let name = "     Om  ";
+    let city = "Mumbai";
+    let str = "MAX";
+
+    console.log(name);
+    console.log(city);
+
+    // Length of string
+    console.log("Length:", name.length);
+
+    // Access characters
+    console.log(name[0]);
+    console.log(name[1]);
+
+    // Loop through string characters
+    for (let i = 0; i < name.length; i++) {
+        console.log(name[i]);
+    }
+
+    // Strings are immutable (correct way to modify)
+    name = "M" + name.slice(1);
+    console.log("Updated name:", name);
+
+    // String methods
+    console.log(name.toUpperCase());
+    console.log(name.toLowerCase());
+    console.log(name.trim());
+
+    let greeting = "HI good morning how are you ?";
+
+    // Split string into array
+    let words = greeting.split(" ");
+    console.log(words);
+
+    // Access array element
+    console.log(words[2]);
+
+    // Slice & substring
+    console.log(greeting.slice(2, 15));
+    console.log(greeting.substring(2, 15));
+
+    // Replace
+    console.log(greeting.replace("morning", "evening"));
+
+    // Includes (case-sensitive)
+    console.log(greeting.includes("how"));
+
+    // Starts & ends
+    console.log(greeting.endsWith("?"));
+    console.log(greeting.startsWith("HI"));
+
+    // Concatenation
+    console.log(str + " " + greeting);
+
+    // Template literal
+    console.log(`My name is ${name.trim()}`);
+
+    // Comparison
+    console.log(name === str);
+
+    // Username validation function
+    function validate(username) {
+        if (username.trim().length < 5) {
+            return ("Username too short");
+        } else {
+            return "Valid username";
+        }
+    }
+
+    function checkUserName(){
+
+        let value1 = document.getElementById("username").value
+        let message = validate(value1)
+        document.getElementById("output").textContent = message("username")
+    }
+
+    // Function call
+    console.log(validate("Om"));
+    console.log(validate("Atharva"));
+    
+    
+</script>
+</body>
+</html>

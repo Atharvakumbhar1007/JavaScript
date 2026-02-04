@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Promise, asyc await
+        //rest and spread operator
+        //class is a prototype (your own datatype)
+        //old way of creating (your own datatype)
+        //a class contain data and functions to manipulate the data
+        // those function
+        function person(name="", age=0){
+            //every function has something called this. 
+            // Which refersto itself
+            this.name = name;
+            this.age = age;
+            this.print = () => `${this.name}, ${this.age}`;
+        }
+        
+        var a1 = new person("Aditi", 45);
+        console.log(`Nmae is ${a1.name} and age is ${a1.age}`);
+        console.log(a1.print());
+
+        function circle(rad = 0){
+            this.rad = rad;
+            this.area = () => `${Math.PI * this.rad * this.rad}`;
+            this.circumference = () => `${Math.PI * 2 * this.rad}`;
+        }
+
+        var c1 = new circle(5);
+        console.log("Area:", c1.area());
+    </script>
+</body>
+</html>

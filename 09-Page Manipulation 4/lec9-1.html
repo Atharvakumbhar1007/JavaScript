@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width:200px;
+            height: 200px;
+            background-color: red;
+        }
+        .border{
+            border:5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <p>
+        <input type="checkbox" id="chkBorder">Border
+    </p>
+    <select name="" id="selColor">
+        <option value="salmon">Salmon</option>
+        <option value="lightblue">Light Blue</option>
+        <option value="lightgreen">Light Green</option>
+    </select> 
+
+    <script>
+        var bx = document.querySelector(".box");
+        document.querySelector("#chkBorder").addEventListener
+        ("change", (ev) =>{
+
+            // toggle border class on checkbox change
+            bx.classList.toggle("border");
+
+            // event information is stored in ev
+            // click, dblclick, hover, change etc are events in JS
+            // when an event occurs JS passes an object containing event info
+
+        });
+
+        // dropdown change event
+        document.querySelector("#selColor").addEventListener
+        ("change", function(){
+
+            // change background color of box
+            // in JS background-color is written as backgroundColor
+            bx.style.backgroundColor = this.value;
+
+            // other examples:
+            // font-weight  -> fontWeight
+            // border-radius -> borderRadius
+        });
+
+    </script>
+</body>
+</html>

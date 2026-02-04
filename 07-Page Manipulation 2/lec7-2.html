@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Enter a number</h3>
+    <input type="text" id="myNum">
+    <hr>
+    <button id="btnPrint">Generate Table</button>
+
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <script>
+        var allP = document.querySelectorAll("p");
+
+        document.querySelector("#btnPrint").addEventListener("click", function () {
+            var num = parseInt(document.querySelector("#myNum").value);
+            var ans;
+
+            if (isNaN(num)) return;
+
+            allP.forEach(function (ele, idx) {
+                ans = num * (idx + 1);
+                ele.innerText = `${num} x ${idx + 1} = ${ans}`;
+            });
+        });
+    </script>
+</body>
+</html>

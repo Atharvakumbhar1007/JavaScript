@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="">
+        let x = 7;
+        const y =5;
+//ES6
+console.log("value of x:",x);
+console.log("value of y:",y);
+
+//arrow function
+let add = (x,y) =>
+    x + y;
+    console.log("sum of x and y:",add(10,5));
+
+let greet = ()=>
+    "hello, world!";
+    console.log(greet());
+
+    let square = x => x*x;
+    console.log("square of 7:",square(7));
+
+//literal
+//let name1 = "riya";
+let marks = 100;
+
+//console.log(`student name: ${name1}, ${marks}`);
+
+//default parameter
+////function greet(name = "guest") {
+ // return`hello, ${name}!`;
+//}
+//console.log(greet("riya"));
+//console.log(greet());
+
+// Destruction
+let[a,b] = [10, 20];
+console.log("a:", a);
+console.log("b:", b);
+
+//let user = {name:"Om", age:25};
+//let {name,age} = user;
+//console.log("name:",name);
+//console.log("age:",age);
+
+// spread operator
+let arr1 = [1,2,3];
+let arr2 = [4,5,6];
+let combinedArr = [...arr1, ...arr2];
+console.log("combined array:", combinedArr);
+
+// rest parameter(no limit of numbers)
+
+function sum(...numbers){
+    let total = 0;
+    for(let num of numbers){
+        total += num;
+    }
+    return total;
+}
+console.log("sum of number:", sum(1,2,3,4,5));
+
+//enhance object literals
+let id = 101;
+let student = {
+   name : "Omkar",
+   id: id,
+ displayInfo(){
+          console.log(`name: ${this.name}, ID: ${this.id}`);
+  }
+}
+student.displayInfo();
+
+let arr3 = [1,2,3,4,5];
+ for (i=0; i<arr3.length; i++){
+    console.log("using for loop:",arr3[i]);
+ }
+ //for...of loop
+ for(let value of arr3){
+ console.log("value of for..of : ",value);
+ }
+
+ //module
+ //export function multiply(x,y){
+  //  return x*y;
+ //}
+    </script>
+</body>
+</html>

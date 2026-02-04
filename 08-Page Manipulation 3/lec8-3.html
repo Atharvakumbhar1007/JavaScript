@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="myList" type="disc">
+        <li>Some Item</li>
+        <li>Some Other</li>
+        <li>Another Item</li>
+    </ul>
+
+    <button id="btnSquare">Square</button>
+    <button id="btnCircle">Circle</button>
+    <button id="btnDisc">Disc</button>
+
+    <h1>The current type is <span id="typeTex">Disc</span></h1>
+
+    <script>
+        // in an input field when you type "square"
+       //and press a button -> the list type is change to square
+       //same for disc, same for circle
+        var list = document.querySelector("#myList");
+        var typeText = document.querySelector("#typeTex");
+
+        document.querySelector("#btnSquare").addEventListener("click", function () {
+            list.style.listStyleType = "square";
+            typeText.innerText = "Square";
+        });
+
+        document.querySelector("#btnCircle").addEventListener("click", function () {
+            list.style.listStyleType = "circle";
+            typeText.innerText = "Circle";
+        });
+
+        document.querySelector("#btnDisc").addEventListener("click", function () {
+            list.style.listStyleType = "disc";
+            typeText.innerText = "Disc";
+        });
+    </script>
+
+</body>
+</html>

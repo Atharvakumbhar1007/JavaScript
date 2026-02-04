@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //ask the user to enter an email address
+        //check that an email address is of the form
+        //something@someone.com
+        //check if the email address is valid-->
+    
+        <!-- <h4>Enter your Email</h4>
+        <input type="text" id="email" placeholder="Enter email address">
+    <br><br>
+    <button id="checkEmail">Check Email</button>
+    <p id="message"></p>
+    <script>
+        function checkEmail() {
+            var email = document.querySelector("#email").value;
+            email = email.trim();
+            var pattern = /^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+
+            if(email == ""){
+                msg.innerHTML = "Valid email address";
+            }
+            else if (pattern.test(email)) {
+                mgs.innerHTML = "Valid emil adsress";
+            }
+            else{
+                mgs.innerHTML = "invalid email address";
+            }
+        } 
+    </script> -->
+
+        <style>
+            small{
+                font-family: monospace;
+                font-weight: 600;
+                color: darkred;
+            }
+        </style>
+        <h3>Enter an Email</h3>
+        <p><input type="text" id="txtEmail"></p>
+        <div class="errors">
+            <small></small>
+        </div>
+        <button id="btnCheck">Check Email Address</button>
+        <script>
+            var txtEmail = document.querySelector("#txtEmail");
+            var errorMsg = document.querySelector("#errorMsg small");
+
+            document.querySelector("#btnCheck").addEventListener("click", function () {
+            var txt = txtEmail.value;
+            txt = txt.trim();   // trim removes extra spaces
+            // Ex: " abcd " => trim() => "abcd"
+
+            if (txt.length < 5) {
+            errorMsg.innerText = "Email address too small";
+            return;
+        }
+
+        parts = txt.split("@");
+        // a@b.com => a , b.com
+
+        if (parts.length < 2) {
+            errorMsg.innerText = "Email does not contain a domain";
+            return;
+        }
+
+        if (parts[0].trim().length < 1) {
+            errorMsg.innerText = "The name part of email is too small";
+            return;
+        }
+
+        if (parts[1].trim().length < 1) {
+            errorMsg.innerText = "The domain part of email is too small";
+            return;
+        }
+        if(part[1].indexOf(".")== -1){
+            errorMsg.innerText = "Incomplete domain name";
+            return;
+        }
+        errorMsg.innerText = "";
+        alert("Email OK");
+    });
+        </script>
+   
+</body>
+</html>

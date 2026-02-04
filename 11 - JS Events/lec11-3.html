@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       *{font-family: 'Segoe UI',sans-serif;}
+       small{color: darkred; font-weight: bold;}
+    </style>
+    <h3>Enter some text</h3>
+    <input type="text" id="myInp">
+    <small id="msg"></small>
+    <script>
+        var myInp = document.querySelector("#myInp");
+        /*
+        Keydown -> the button has just started being pressed (not printed on the screen)
+        keypress -> deprecated (incossistent - does not handle special key (arrow,shift))
+        keyup - the key has been printed - and the finger is being lifed up
+        */
+        myInp.addEventListener("input", () =>{
+            myInp.Value = myInp.value.replace(/\d/g,""); 
+            //regrex
+            //\d - all digits
+            ///g - search gloablly,
+            //replace(/\d/g,"")
+            //replace all digits with ""
+        });
+
+    </script>
+</body>
+</html>

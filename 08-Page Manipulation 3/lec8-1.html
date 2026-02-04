@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul type="disc">
+        <li>Some Item</li>
+        <li>Some Other</li>
+        <li>Another Item</li>
+    </ul>
+
+    <button id="btnSquare">Square</button>
+    <button id="btnDisc">Disc</button>
+    <button id="btnCircle">Circle</button>
+
+    <h1>The current type is <span id="typeText">disc</span></h1>
+
+    <script>
+        var list = document.querySelector("ul");
+        var typeText = document.querySelector("#typeText");
+
+        document.querySelector("#btnSquare").addEventListener("click", () => {
+            list.setAttribute("type","Square");
+            typeText.innerText = list.getAttribute("type");
+        });
+
+        document.querySelector("#btnDisc").addEventListener("click", () => {
+            list.setAttribute("type","Disc");
+            typeText.innerText = list.getAttribute("type");
+        });
+
+        document.querySelector("#btnCircle").addEventListener("click", () => {
+            list.setAttribute("type","Circle");
+            typeText.innerText = list.getAttribute("type");
+        });
+    </script>
+</body>
+</html>

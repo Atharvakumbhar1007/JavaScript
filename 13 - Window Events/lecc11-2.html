@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav{
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0px 3px 2px grey;
+            background-color: white;
+        }
+
+        nav ul{
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            transition: 0.4s;
+            background-color: white;
+        }
+
+        nav ul li{
+            text-transform: capitalize;
+            padding: 20px 0;
+        }
+
+        #first{
+            margin-top: 100px;
+        }
+
+        /* REQUIRED FIX FOR IMAGE FITTING */
+        img{
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul id="myUL" class="padded">
+            <li>Home</li>
+            <li>about</li>
+            <li>Gallery</li>
+            <li>Post</li>
+        </ul>
+    </nav>
+
+    <h3 id="first">First image</h3>
+    <img 
+        src="https://picsum.photos/1200/600" 
+        alt="Large landscape image"
+    >
+
+    <h3>Second Image</h3>
+    <img 
+        src="https://picsum.photos/1200/700" 
+        alt="Another large image"
+    >
+
+    <h3>Third image</h3>
+    <img 
+        src="https://picsum.photos/1200/800" 
+        alt="Third large image"
+    >
+
+<script>
+    window.addEventListener("load", function () {
+        var myUL = document.querySelector('#myUL');
+
+        window.addEventListener("scroll", function () {
+            var h = document.documentElement.scrollTop || document.body.scrollTop;
+
+            if (h >= 200) {
+                if (myUL.classList.contains("padded")) {
+                    myUL.classList.remove("padded");
+                }
+            } 
+            else {
+                if (!myUL.classList.contains("padded")) {
+                    myUL.classList.add("padded");
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

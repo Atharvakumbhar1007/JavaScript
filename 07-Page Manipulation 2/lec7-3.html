@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading1"></h1>
+    <h1 id="heading2"></h1>
+
+    <script>
+        function demo(){
+            document.querySelector("#heading1").innerText = "<i>Hi there</i>";
+            document.querySelector("#heading2").innerHTML = "<i>Hello World</i>";
+
+            alert(`Data in heading 2 is ${document.querySelector("#heading2").innerText}`);
+            alert(`Data in heading 2 is ${document.querySelector("#heading2").innerHTML}`);
+        }
+
+        demo(); // calling function
+    </script>
+</body>
+</html>

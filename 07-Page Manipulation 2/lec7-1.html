@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <p>Some Para 0001</p>
+    <button id="mybtn">Change all</button>
+
+    <script>
+        var allP = document.querySelectorAll("p");
+        document.querySelector("#mybtn").addEventListener("click", () =>{
+            allP.forEach(ele => ele.innerText = "Change vis JS");
+                /*
+                for(var i = 0; i < allP.length; i++){
+                allp[i].innerText = Changed via JS";
+                */
+        });
+    </script>
+</body>
+</html>

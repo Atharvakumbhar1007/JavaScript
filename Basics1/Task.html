@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Program</title>
+</head>
+<body>
+
+    <h2>Student Marks Details</h2>
+    <p id="output"></p>
+
+    <script>
+        /* need an array to store marks
+           total marks
+           average marks
+           highest and lowest marks
+           output in html */
+
+        let marks = [1, 2, 3, 4, 5];
+
+        // total marks
+        let total = 0;
+        for (let i = 0; i < marks.length; i++) {
+            total += marks[i];
+        }
+
+        // average marks
+        let average = total / marks.length;
+
+        // highest and lowest marks
+        let highest = Math.max(...marks);
+        let lowest = Math.min(...marks);
+
+        // output in HTML
+        document.getElementById("output").innerHTML =
+            "Marks: " + marks + "<br>" +
+            "Total Marks: " + total + "<br>" +
+            "Average Marks: " + average + "<br>" +
+            "Highest Marks: " + highest + "<br>" +
+            "Lowest Marks: " + lowest;
+    </script>
+
+</body>
+</html>

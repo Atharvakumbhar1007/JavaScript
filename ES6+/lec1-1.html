@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        .box {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="demo">This is the #demo element</h2>
+    <p id="text"></p>
+
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+
+    <button id="btn">Test Selectors</button>
+
+    <script>
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click",function(){
+            alert("Button clicked!");
+        });
+        function testSelector() {
+            // Select element by ID
+            let demoF1 = document.querySelector("#demo");
+            demoF1.style.color = "blue";
+
+            // Select ALL elements with class "box"
+            let boxes = document.querySelectorAll(".box");
+
+            for (let box of boxes) {
+                box.style.backgroundColor = "lightgreen";
+            }
+            document.getElementById("text").textContent = "Hello Student";
+
+        }
+    </script>
+</body>
+</html>

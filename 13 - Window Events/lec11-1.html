@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav{
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0px 3px 2px gray;
+            background-color: white;
+        }
+        nav ul{
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style-type: none;
+        }
+        nav ul li{
+            text-transform: capitalize;
+            padding: 20px 0;
+        }
+        body{
+            padding-top: 80px;
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>First Image</h3>
+    <img src="image1.jpg" alt="">
+
+    <h3>Second Image</h3>
+    <img src="image2.jpg" alt="">
+
+    <h3>Third Image</h3>
+    <img src="image3.jpg" alt="">
+
+    <script>
+        function getTime() {
+            var tm = new Date();
+            return tm.toLocaleString() + ":" + tm.getMilliseconds();
+        }
+        window.addEventListener("DOMContentLoaded", function () {
+            console.log("DOM Content loaded - only HTML structure has been loaded");
+            console.log(getTime());
+        });
+        window.addEventListener("load", function () {
+            console.log(
+                "Images have now been loaded / all scripts / all CSS / all JS files and any external content"
+            );
+            console.log(getTime());
+        });
+        window.addEventListener("resize", function (ev) {
+            console.log(`Width: ${ev.target.innerWidth}px`);
+            console.log(`Height: ${ev.target.innerHeight}px`);
+        });
+        window.addEventListener("beforeunload", function (ev) {
+            ev.preventDefault();
+            ev.returnValue = "";
+            console.log("Tab being closed");
+        });
+    </script>
+</body>
+</html>

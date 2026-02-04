@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [3, 6, 9, 12, 15, 18, 21, 24];
+
+        //map:create a new array, but applying some operation on the old one
+        //you can pass 1, 2, or 3 parse like foreach
+        var tripleArr = arr.map( x => x*3);
+        console.log(tripleArr.toString());
+
+        //filter-accepts a function that return true or false
+        //if true, the value will be copied to new array
+        //if false, the value will be not copied to new array
+        var evenArray = arr.filter(x => X % 2 == 0);
+        console.log(evenArray.toString());
+    </script>
+</body>
+</html>

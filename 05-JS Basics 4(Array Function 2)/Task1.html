@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*An array management system function for add 
+        remove edit search shot and array call this 
+        functions to show all the operation in 
+        JavaScript*/
+        
+        // Add element
+        var arr = [];
+        function addElement(value){
+            arr.push(value);
+            console.log(value + "added");
+        }
+
+        //  Remove Array
+        function removeElement(value){
+            var index =
+            arr.indexOf(values);
+            if(index !== -1) {
+                arr.splice(index, 1);
+            console.log(value + "removed");
+        } else {
+            console.log(value + "not found");
+        }
+    }
+        // Edit element
+        function editElement(oldValue, newValue) {
+        let index = arr.indexOf(oldValue);
+        if (index !== -1) {
+            arr[index] = newValue;
+            console.log(oldValue + " changed to " + newValue);
+        } else {
+            console.log(oldValue + " not found");
+        }
+    }
+        
+        // Search Array
+        function searchElement(value) {
+            if (arr.includes(value)){
+                console.log(value + "Found in array");
+            }else {
+                console.log(value + "not found inarray");
+            }
+        }
+
+        // Sort Array
+        function sortArray(){
+            arr.sort();
+            console.log(arr.toString());
+        }
+
+        //Display Array
+        function displayArray() {
+            console.log("Array Elements:",arr);
+        }
+
+    </script>
+</body>
+</html>

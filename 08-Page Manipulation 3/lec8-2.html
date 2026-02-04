@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<img src="off.png" alt="" height="400" id="bulb">
+
+<button id="btnOff" disabled>Off</button>
+<button id="btnOn">On</button>
+
+<script>
+    var bulb = document.querySelector("#bulb");
+    var btnOff = document.querySelector("#btnOff");
+    var btnOn = document.querySelector("#btnOn");
+
+    btnOff.addEventListener("click", () => {
+        bulb.setAttribute("src", "on.png");
+        btnOff.setAttribute("disabled", "");
+        btnOn.removeAttribute("disabled");
+    });
+
+    btnOn.addEventListener("click", () => {
+        bulb.setAttribute("src", "off.png");
+        btnOn.setAttribute("disabled", "");
+        btnOff.removeAttribute("disabled");
+    });
+</script>
+
+</body>
+</html>

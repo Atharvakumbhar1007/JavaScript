@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Bill{
+            constructor(amount = 0,discountpercent = 0){
+                this.amount = amount;
+                this.discountpercent = discountpercent;
+            }
+            discount(){
+                return this .amount * this.discountpercent / 100;
+            }
+            total(){
+                return this.amount * this.amount - this.discount();
+            }
+        }
+
+        var a = new bill(500, 10);
+        console.log(a.discount());
+        console.log(a.tottal());
+    </script>
+</body>
+</html>

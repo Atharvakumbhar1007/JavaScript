@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //This is actually the same code as previous
+        class circle{
+            //ES 2022
+            #rad; //This is private (Private Field)
+            constructor(rad = 0){
+                this.#rad = rad;
+            }
+            area(){ //#area - will make it private as well
+                return Math.PI * this.rad * this.rad;
+            }
+            circumference(){
+                return Math.PI * 2 * this.rad;
+            }  
+        }
+        //Object Oriented Programming
+        //Program - consists of Object interacting with each othar
+        var a = new circle(5);
+        console.log(a.area());
+
+        //Class Car
+        //Var Audi = New Car()
+        //audi.brake(), audi.accelerate(), audi.horn()
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [345, 64, 54, 94, 15];
+        /*for... can be used to print
+        another wat to print - using callback function*/
+        function printNumber(num){
+            //shortcut foe num should exist
+            //will evaluate to false if it null / undefine - if num
+            //another way: if num is "truthy"
+            if(num)
+            console.log(num);
+        }
+        function printNumberAndIndex(num, idx){
+            if(num) console.log('${idx}: ${num}');
+        }
+
+        function doubleNumber(num, idx, o){
+            o[idx] = num*2;
+        }
+        arr.forEach(printNumber);
+        //foreach send anumber each time in printnumber
+        //i.e. calls it 6 times
+        console.log("Printing num & index")
+        arr.forEach(printNumberAndIndex);
+        console.log("Doubling each element");
+        arr.forEach(doubleNumber);
+        console.log(arr.toString());
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [ 2, 6, 2, 4, 8, 5, 3];
+        //check if all number are trie
+        if (arr.every(x => x % 2 ==0)){
+            console.log("All number are even");
+        }
+        else{
+            console.log("Not all number are even")
+        }
+
+        //check is some number are even
+        if(arr.some(x => x % 2 ==0)){
+            console.log("Some number are even");
+        }
+        else{
+            console.log("No number are even")
+        }
+
+        //Reduce
+        //acc, val ->
+        // sum of all values
+        var sum = arr.reduce((sum, val) => sum + val, 0);
+        console.log("Sum of values is ", sum);
+
+        //find max
+        var max = arr.reduce((max,val)=>{
+            if(max < val){
+                return val;
+            }
+            else{
+                return max;
+            }
+        }, 0);
+        console.log("Maximum value is",max);
+
+        //Ternary Operator
+        max = arr.reduce((max, val) => max > val ? max : val, 0);
+        // var arr = [2, ,6, 2, 7, 8, 5, 3];
+        /* 
+            sum =0;
+            for(i = 0, i < arr.length; i++){
+            val = arr[i];
+            sum = sum + val;
+    }*/
+
+    </script>
+</body>
+</html>

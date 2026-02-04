@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum(a,b){
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            //NaN -> not a number
+            if(isNaN(a) || isNaN(b)){
+                return NaN;
+            }
+            return a + b;
+        }
+        console.log(sum("Abcd","hdhdj"), sum(3,4));
+    </script>
+</body>
+</html>

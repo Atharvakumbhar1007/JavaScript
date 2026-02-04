@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //callback pattern ->later
+        //this function takes a long time to complete ->  you wnt to know when it's complete
+        //you want it to send an email when it's done
+        function doSomething(callback, data){
+            //code that takes a long time - fetching records
+            callback(addr);
+        }
+
+            function sendEmail(addr){
+                //code to send email
+                console.log("Email sent to address: "+ addr);
+            }
+
+            doSomething(sendEmail, 25);
+    </script>
+</body>
+</html>

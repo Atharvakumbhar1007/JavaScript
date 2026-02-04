@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Enter a number</h3>
+    <input type="number" id="inpNum1">
+    <h3>Enter another number</h3>
+    <input type="number" id="inpNum2">
+    <hr>
+    <button id="btnAdd" onclick="add()">Add</button>
+    <script>
+        function add(){
+            //when taking data from input - we use value (input, textarea,select)
+            var num1 = parseFloat(document.querySelector('#inpNum1').value);
+            var num1 = parseFloat(document.querySelector('#inpNum2').value);
+
+            if(isNaN(num1) || isNaN(num2)){
+                return;
+            }
+            var ans = num1 + num2;
+            document.querySelector("#tagAns").innerText = "ans is" + ans;
+        }
+    </script>
+</body>
+</html>
