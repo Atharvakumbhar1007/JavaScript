@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*===========================DAY1===============================*/
+
+
+        //function declaration
+        function one() {
+            two();
+            console.log("back to one");
+        }
+        function two() {
+            console.log("Inside two");
+        }
+        one();
+
+        /*      console.log(a);
+                var a =10;
+                console.log(b);
+                let b = 20;*/
+
+        //closure (inner-outer function)
+        function outer() {
+            let count = 0;
+            console.log(count);
+            return function inner() {
+                count++;
+                console.log(count);
+            };
+        }
+
+        let counter = outer();
+        console.log(counter);
+        counter();
+        counter();
+
+        //scope 
+        /*let a = 10; //global scope
+        function test() {
+            let b = 20;
+        }
+        if (true) {
+            let c = 30;
+            console.log(a);
+        }
+        test();
+        console.log(b);
+        console.log(c);*/
+
+        /*===========================DAY2===============================*/
+
+        //this keyword
+        let person = {
+            name: "John",
+            greet: function () {
+                console.log(this.name);
+                //this(keyword) refers to the person object
+            }
+        };
+        person.greet();
+
+        //callback function
+        function greet(name, callback) {
+            console.log("Hello " + name);
+            callback("Alice");
+            console.log("greet executed");
+        }
+        greet("Alice", function () {
+            console.log("This is callback function");
+        });
+        function sayBye(name1) {
+            console.log("Bye " + name1);
+        }
+        greet("Alice", sayBye);
+
+        /*greet("Alice", function () {
+            console.log("This is callback function");
+            console.log("hi there!");
+            //first these two will execute and then 
+            // greet executed will execute*/
+
+        setTimeout(() =>)
+
+        let promise = new Promise((resolve, reject) => {
+            let success = true;
+
+            if (success) resolve("Done!");
+            else reject("Failed!");
+        });
+
+        promise.then(res => console.log(res))
+            .catch(err => console.log(err));
+    </script>
+</body>
+
+</html>
