@@ -1,6 +1,0 @@
- body { font-family: Arial; margin: 20px; }
-        .error { border: 2px solid red; }
-        .contact-box { border: 1px solid #999; padding: 10px; margin: 10px 0; }
-        .edit-highlight { background: #ffffcc; }
-        #updatebtn, #cancelbtn { display: none; }
- 
