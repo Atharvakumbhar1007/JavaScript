@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*1. WAP to check whther the string is empty or not*/
+        let str = prompt("Enter a string: ");
+        if (str === "") {
+            console.log("String is empty");
+        } else {
+            console.log("String is NOT empty");
+        }
+
+        /*2. WAP to check whether the character at the given index 
+        is in lower case or not -> Hello SPRK -> 
+        index = 5 -> o ->lower case*/
+
+        let str1 = "Hello SPRK";
+        let index = 5;
+
+        //get charater at given index
+        let ch = str.charAt(index);
+
+        if (ch >= 'a' && ch <= 'z') {
+            console.log(ch, "is a lowercase charater");
+        } else {
+            console.log(ch, "is NOT a lowercase charater");
+        }
+
+        /*
+        3. Good or bad string -> If string starts with uppercase 
+        and have length more than 5 characters then display 
+        good string
+        */
+
+        let str2 = prompt("Enter a string: ");
+
+        if (
+            str2[0] === str2[0].toUpperCase() && str.length > 5
+        ) {
+            console.log("Good String");
+        } else {
+            console.log("Bad String");
+        }
+
+
+    </script>
+</body>
+
+</html>
