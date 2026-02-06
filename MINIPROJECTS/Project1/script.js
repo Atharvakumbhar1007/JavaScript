@@ -1,66 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Get Elements
+document.addEventListener("DOMContentLoaded", () => { // Ensure DOM is loaded
+const input = document.getElementById("taskInput");
+const addBtn = document.getElementById("addBtn");
+const clearBtn = document.getElementById("clearBtn");
+const taskList = document.getElementById("taskList");
 
-    const input = document.getElementById("studentNameInput");
-    const addBtn = document.getElementById("addStudentBtn");
-    const resetBtn = document.getElementById("resetAllBtn");
-    const taskList = document.getElementById("studentList");
+// Add Task
+addBtn.addEventListener("click", () => {
+    const task = input.value.trim();
 
-    
-    addBtn.addEventListener("click", function () {
-        const studentName = input.value.trim();
+    if (task === "") {
+        alert("Please enter a task!");
+        return;
+    }
 
-        if (studentName === "") {
-            alert("Please enter a student name!");
-            return; 
+    // Create Elements
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    const delBtn = document.createElement("button");
 
-        }
+    span.textContent = task;
+    delBtn.textContent = "Delete";
 
-        const li = document.createElement("li");
-        const span = document.createElement("span");
-        const presentBtn = document.createElement("button");
-        const absentBtn = document.createElement("button");
-        const delBtn = document.createElement("button");
-
-        span.textContent = studentName;
-        presentBtn.textContent = "PRESENT";
-        absentBtn.textContent = "ABSENT";
-        delBtn.textContent = "DELETE";
-
-        
-        presentBtn.addEventListener("click", () => {
-            li.classList.add("present");
-            li.classList.remove("absent");
-        });
-
-        
-        absentBtn.addEventListener("click", () => {
-            li.classList.add("absent");
-            li.classList.remove("present");
-        });
-
-        
-        span.addEventListener("dblclick", () => {
-            li.classList.toggle("absent");
-            li.classList.remove("present");
-        });
-
-        
-        delBtn.addEventListener("click", () => {
-            li.remove();
-        });
-
-        li.appendChild(span);
-        li.appendChild(presentBtn);
-        li.appendChild(absentBtn);
-        li.appendChild(delBtn);
-        taskList.appendChild(li);
-
-        input.value = "";
+    // Mark Complete
+    span.addEventListener("click", () => {
+        span.classList.toggle("completed");
     });
 
-
-    resetBtn.addEventListener("click", () => {
-        taskList.innerHTML = "";
+    // Delete Task
+    delBtn.addEventListener("click", () => {
+        li.remove();
     });
 
+    li.appendChild(span);
+    li.appendChild(delBtn);
+    taskList.appendChild(li);
+
+    input.value = "";
+});
+
+// Clear All
+clearBtn.addEventListener("click", () => {
+    taskList.innerHTML = "";
+});
 });
