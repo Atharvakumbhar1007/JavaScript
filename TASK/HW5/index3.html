@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="click">
+    <button id="check">check</button>
+    <p id="result"></p>
+    <script>
+        let button = document.getElementById("countBtn");
+        let countDisplay = document.getElementById("count");
+
+        let count = 0;
+
+        button.addEventListener("click", function () {
+            count++;
+            countDisplay.textContent = count;
+        });
+
+    </script>
+</body>
+
+</html>

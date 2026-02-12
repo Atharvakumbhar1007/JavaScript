@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd</title>
+</head>
+
+<body>
+    <input type="number" id="numberInput">
+    <button id="check">Check</button>
+    <p id="result"></p>
+
+    <script>
+        let button = document.getElementById("check");
+        let result = document.getElementById("result");
+
+        button.addEventListener("click", function () {
+            let number = Number(document.getElementById("numberInput").value);
+
+            if (number % 2 == 0) {
+                result.innerHTML = "Even Number";
+            } else {
+                result.innerHTML = "Odd Number";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
