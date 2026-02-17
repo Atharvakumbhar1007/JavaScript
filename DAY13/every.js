@@ -22,4 +22,4 @@ console.log(
     arr.every((element) => {
         return element % 2 == 0;
     })
-);
+); 
