@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Function</title>
+</head>
+
+<body>
+    <script>
+        let person1 = {
+            name: "Atharva",
+            age: 21,
+            isStudent: false
+        };
+        console.log(person1);
+
+        //Undefined
+
+        let person = {
+            name: "Rahul",
+            age: 22
+        };
+
+        let jsonData = JSON.stringify(person);
+
+        console.log(jsonData);
+
+        console.log(typeof jsonData); //string
+
+        //JSON parse
+
+        let data = '{"name":"Rahul","age":22}';//JSON
+
+        let obj = JSON.parse(data);
+
+        console.log(obj.name); //Rahul
+
+        fetch("https://jsonplaceholder.typicode.com/users/1")
+            .then(response => response.json())
+            .then(data => console.log(data));
+
+
+    </script>
+</body>
+
+</html>
