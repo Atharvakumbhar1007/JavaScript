@@ -38,4 +38,4 @@ let dog = new Dog("Simba", 8, "dogs", "Labrador-cross");
 
 dog.greet(); //call from mammals
 dog.bite();  //call from Dog
-dog.species(); 
+dog.species(); //call from Animals
