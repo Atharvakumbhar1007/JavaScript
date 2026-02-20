@@ -22,5 +22,12 @@ console.log(allLists);
 
 for (let list of allLists) {
     allLists.style.textDecoration = "none";
+    list.style.color = "green";
+}
 
+let allListLinks = document.querySelectorAll(".list-item a");
+
+for (let list of allListsLinks) {
+    allLists.style.textDecoration = "none";
+    list.style.color = "green";
 }

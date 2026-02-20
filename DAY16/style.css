@@ -10,6 +10,14 @@
     object-fit: cover;
 }
 
+.circle {
+    border-radius: 50%;
+}
+
+.hidden {
+    display: none;
+}
+
 #newImage {
     width: 800px;
     height: 500px;
