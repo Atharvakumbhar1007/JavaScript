@@ -21,3 +21,12 @@ let body = document.querySelector("body");
 body.appendChild(para);
 
 console.log(body);
+
+/*one element have one parent ->thats why 
+it changed from body tp box*/
+
+let box = document.querySelector(".box");
+
+box.append(para);
+
+para.append("Hello New Text Added");
