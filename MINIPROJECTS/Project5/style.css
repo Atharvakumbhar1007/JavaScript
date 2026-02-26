@@ -1,0 +1,151 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #4e73df, #1cc88a);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    transition: background 1s ease;
+    color: #fff;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.controls {
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+input,
+select {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #4e73df;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Hover Animation */
+.product-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+.product-card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    margin: 5px 0;
+}
+
+/* ----------- Error Message ----------- */
+.error {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-top: 15px;
+    animation: shake 0.4s ease;
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* ----------- Fade In Animation ----------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
