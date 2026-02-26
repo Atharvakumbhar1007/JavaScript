@@ -116,7 +116,8 @@ class InventoryManager {
     }
 }
 
-// ---------------- APP INITIALIZATION ----------------
+// ---------------- APP INITIALIZATION ------------------
+
 const manager = new InventoryManager();
 manager.fetchProducts();
 
