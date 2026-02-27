@@ -94,6 +94,12 @@ function shufflePassword(passwordArray) {
     return stringPassword;
 }
 
+function setIndicatorColor(color) {
+    passwordStrengthIndicator.style.background = color;
+
+    passwordStrengthIndicator.style.boxShadow = "0px 0px 10px 1px";
+}
+
 function calculateStrenth() {
     let isUpper = false;
     let isLower = false;
@@ -111,6 +117,15 @@ function calculateStrenth() {
     }
     if (numbersCheck.checked) {
         isNumber = true;
+    }
+    if (isLower && isUpper && (isSymbol || isNumber) && passwordLength >= 8) {
+        setIndicatorColor("green");
+    } else if ((isLower || isUpper) &&
+        (isSymbol || isNumber) &&
+        passwordLength > 6) {
+        setIndicatorColor("yellow");
+    } else {
+        setIndicatorColor("red");
     }
 }
 
@@ -166,5 +181,6 @@ generateBtn.addEventListener("click", () => {
     console.log("After shuffle password = ", password);
 
     passwordDisplay.textContent = password;
+    calculateStrenth();
 });
 
