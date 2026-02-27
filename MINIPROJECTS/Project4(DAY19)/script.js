@@ -10,6 +10,10 @@ const inputSlider = document.querySelector("[dataLengthSlider]");
 
 const generateBtn = document.querySelector("#generateBtn");
 
+const passwordDisplay = document.querySelector("#passwordText");
+
+const passwordStrengthIndicator = document.querySelector(".strength-bar");
+
 const symbols = "!@#$%^&*()_+-*/{}[]:><?";
 //Utility Functions
 
@@ -71,6 +75,45 @@ function handleCheckboxChange() {
     });
 }
 
+//Shuffle Password
+function shufflePassword(passwordArray) {
+    for (let i = passwordArray.length - 1; i > 0; i--) {
+
+        //Generate random index -> swap
+        let j = Math.floor(Math.random() * (i + 1));
+
+        //swap
+        let temp = passwordArray[i];
+        passwordArray[i] = passwordArray[j];
+        passwordArray[j] = temp;
+    }
+    let stringPassword = "";
+    passwordArray.forEach((singleChar) => {
+        stringPassword = stringPassword + singleChar;
+    });
+    return stringPassword;
+}
+
+function calculateStrenth() {
+    let isUpper = false;
+    let isLower = false;
+    let isSymbol = false;
+    let isNumber = false;
+
+    if (upperCaseCheck.checked) {
+        isUpper = true;
+    }
+    if (lowerCaseCheck.checked) {
+        isLower = true;
+    }
+    if (symbolsCheck.checked) {
+        isSymbol = true;
+    }
+    if (numbersCheck.checked) {
+        isNumber = true;
+    }
+}
+
 allCheckBox.forEach((checkbox) => {
     checkbox.addEventListener("change", handleCheckboxChange);
 });
@@ -100,18 +143,7 @@ generateBtn.addEventListener("click", () => {
     let password = "";
     let functionArray = [];
 
-    if (upperCaseCheck.checked) {
-        functionArray.push(generateUpperCase);
-    }
-    if (lowerCaseCheck.checked) {
-        functionArray.push(generateLowerCase);
-    }
-    if (symbolsCheck.checked) {
-        functionArray.push(generateSymbol);
-    }
-    if (numbersCheck.checked) {
-        functionArray.push(generateRandomNumber);
-    }
+
 
     console.log("Array of Functions = ", functionArray);
 
@@ -127,16 +159,12 @@ generateBtn.addEventListener("click", () => {
         let randomIndex = getRandomInteger(0, functionArray.length);
         password = password + functionArray[randomIndex]();
     }
-    console.log("After completing entire length of slider password = ", password);
+    //console.log("After completing entire length of slider password = ", password);
 
     //Shuffle
+    password = shufflePassword(Array.from(password));
+    console.log("After shuffle password = ", password);
+
+    passwordDisplay.textContent = password;
 });
 
-function shufflePassword(passwordArray) {
-    for (let i = passwordArray.length - 1; i > 0; i--) {
-
-        //Generate random index -> swap
-        Math.floor(Math.random() * (i + 1));
-    }
-    return;
-}
