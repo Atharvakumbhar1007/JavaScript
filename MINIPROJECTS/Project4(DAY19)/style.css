@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=press+Start+2P&display=swap");
+
+body {
+    background: radial-gradient(circle at top, #0a0a0a, #1c1c1c);
+    font-family: "Press Start 2P", cursive;
+    color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.generator {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ffcc;
+    border-radius: 12px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 0 20px #00ffcc;
+}
+
+h1 {
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #ff66cc;
+}

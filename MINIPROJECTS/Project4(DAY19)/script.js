@@ -8,6 +8,8 @@ const lengthDisplay = document.querySelector("#lengthValue");
 
 const inputSlider = document.querySelector("[dataLengthSlider]");
 
+const generateBtn = document.querySelector("#generateBtn");
+
 const symbols = "!@#$%^&*()_+-*/{}[]:><?";
 //Utility Functions
 
@@ -78,4 +80,13 @@ inputSlider.addEventListener("input", (event) => {
     console.log(event);
     passwordLength = event.target.value;
     handleSlider();
+});
+
+generateBtn.addEventListener("click", () => {
+
+    // check if no checkbox is selected then do not perform anything
+    if (checkboxCheckedCount <= 0) {
+        console.log("Nothing happen");
+        return;
+    }
 });
