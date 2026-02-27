@@ -1,6 +1,6 @@
 const allCheckBox = document.querySelectorAll("input[type=checkbox]");
 const upperCaseCheck = document.querySelector("#uppercase");
-const lowerCaseCheck = document.querySelector("#lowerCase");
+const lowerCaseCheck = document.querySelector("#lowercase");
 const symbolsCheck = document.querySelector("#symbols");
 const numbersCheck = document.querySelector("#numbers");
 
@@ -19,13 +19,13 @@ function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getRandomNumber() {
-    return getRandomInteger(0, 9);
+function generateRandomNumber() {
+    return getRandomInteger(0, 10);
 }
 
 //Lower Case
 function generateLowerCase() {
-    let randomDecimalNumber = getRandomInteger(97, 122);//Values taken from ASCII Table
+    let randomDecimalNumber = getRandomInteger(97, 123);//Values taken from ASCII Table
     return String.fromCharCode(randomDecimalNumber);
 }
 //Upper Case
@@ -34,7 +34,7 @@ function generateUpperCase() {
     return String.fromCharCode(randomDecimalNumber);
 }
 //Special Charaters
-function generatesSymbol() {
+function generateSymbol() {
     let randomDecimalNumber = getRandomInteger(0, symbols.length);//Values taken from ASCII Table
     return symbols.charAt(randomDecimalNumber);
 }
@@ -75,13 +75,14 @@ allCheckBox.forEach((checkbox) => {
     checkbox.addEventListener("change", handleCheckboxChange);
 });
 
-//Add Event Listner -> input on slider
+//Add Event Listner -> on input on slider
 inputSlider.addEventListener("input", (event) => {
-    console.log(event);
+    // console.log(event);
     passwordLength = event.target.value;
     handleSlider();
 });
 
+let password;
 generateBtn.addEventListener("click", () => {
 
     // check if no checkbox is selected then do not perform anything
@@ -89,4 +90,53 @@ generateBtn.addEventListener("click", () => {
         console.log("Nothing happen");
         return;
     }
+    // Special Case when all checkbox selected bit length of slider is lesss than chekbox selected
+    if (passwordLength < checkboxCheckedCount) {
+        passwordLength = checkboxCheckedCount;
+        handleSlider();
+    }
+
+    //remove old password
+    let password = "";
+    let functionArray = [];
+
+    if (upperCaseCheck.checked) {
+        functionArray.push(generateUpperCase);
+    }
+    if (lowerCaseCheck.checked) {
+        functionArray.push(generateLowerCase);
+    }
+    if (symbolsCheck.checked) {
+        functionArray.push(generateSymbol);
+    }
+    if (numbersCheck.checked) {
+        functionArray.push(generateRandomNumber);
+    }
+
+    console.log("Array of Functions = ", functionArray);
+
+    //Make sure all occurance of functions Array should be addaed in password
+    for (let fn of functionArray) {
+        password = password + fn();
+    }
+
+    console.log("Array running all checkbox function = ", password);
+    console.log(passwordLength);
+    console.log(functionArray.length);
+    for (let i = 0; i < passwordLength - functionArray.length; i++) {
+        let randomIndex = getRandomInteger(0, functionArray.length);
+        password = password + functionArray[randomIndex]();
+    }
+    console.log("After completing entire length of slider password = ", password);
+
+    //Shuffle
 });
+
+function shufflePassword(passwordArray) {
+    for (let i = passwordArray.length - 1; i > 0; i--) {
+
+        //Generate random index -> swap
+        Math.floor(Math.random() * (i + 1));
+    }
+    return;
+}
