@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+    <style>
+        .box {
+            border: 2px solid crimson;
+            width: 300px;
+            height: 300px;
+        }
+
+        ul {
+            background-color: purple;
+        }
+
+        li {
+            background-color: royalblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Bubbling:</h1>
+    <p>Whenever we run event of child by default parent
+        event willl also trigger this concept is called as Event Bubbling</p>
+
+    <div class="box ">
+        Hello I an Atharva
+        <ul>
+            <li>I am First List</li>
+            <li>I am Second List</li>
+            <li>I am Third List</li>
+        </ul>
+    </div>
+
+    <script>
+        let div = document.querySelector(".box");
+        let ul = document.querySelector("ul");
+        let items = document.querySelectorAll("li");
+
+        div.addEventListener("click", (event) => {
+            console.log("Div was clicked");
+        })
+
+        ul.addEventListener("click", (event) => {
+            console.log("Unordered List was clicked");
+        })
+
+        items.forEach((item) => {
+            item.addEventListener("click", (event) => {
+                console.log("Item Clicked was = ", item.textContent);
+            })
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
