@@ -27,6 +27,8 @@
     <p>Whenever we run event of child by default parent
         event willl also trigger this concept is called as Event Bubbling</p>
 
+    <br><br>
+    To stop event bubbling to occur we use event.stopPropogating()
     <div class="box ">
         Hello I an Atharva
         <ul>
@@ -42,6 +44,7 @@
         let items = document.querySelectorAll("li");
 
         div.addEventListener("click", (event) => {
+            event.stopPropagation();
             console.log("Div was clicked");
         })
 
