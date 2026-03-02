@@ -4,13 +4,11 @@ function addition() {
     console.log(result);
 }
 
-function sunOfOne() {
-    return 1;
-}
 function sumOfOne() {
     return 1;
 }
 function sumOfTwo() {
-    return sumOfOne() + sumOfTwo();
+    return sumOfOne() + sumOfOne();
 }
+
 addition();
