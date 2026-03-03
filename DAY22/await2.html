@@ -24,7 +24,7 @@ it pauses the execution of surrounding aync functions untill the promise is sett
             });
         }
 
-        let request = getnumber();
+        let request = getNumber();
         request
             .then((result) => {
                 console.log(`Result = ${result}`);
@@ -44,7 +44,7 @@ it pauses the execution of surrounding aync functions untill the promise is sett
             })
             .then((result) => {
                 console.log(`Result = ${result}`);
-                return getNumber();
+
             })
     </script>
 </body>
