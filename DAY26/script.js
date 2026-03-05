@@ -133,5 +133,31 @@ const validators = {
     country: (value) => value.trim() !== "",
     city: (value) => value.trim() !== "",
     phone: (value) => /^\d{7,15}$/.test(value),
+    dob: (value) => {
+        if (!value) {
+            return false;
+        }
+        const dobDate = new Date(value);
+        return dobDate < new Date();
+    },
+    appointment: (value) => {
+        if (!value) {
+            return false;
+        }
+        const appointmentDate = new Date(value);
+        return appointmentDate < new Date();
+    },
 };
 
+const messages = {
+    firstName: "First name cannot be empty",
+    lastName: "Last name cannot be empty",
+    email: "Enter valid email (no spaces)",
+    username: "Username cannot be empty of contains spaces",
+    password: "Min 8 characters, 1 Uppercase, 1 Special Characters, 1 Digit",
+    country: "Please select country",
+    city: "Please select city",
+    phone: "Phone number must be number between 7 to 15 digits",
+    dob: "Please select valid DOB",
+    appointment: "Previous dates are not applicable",
+};
