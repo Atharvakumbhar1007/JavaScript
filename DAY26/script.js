@@ -68,3 +68,70 @@ const COUNTRY_TO_CODE = {
     Australia: "+61",
     China: "+86",
 };
+
+// Dynamically create element of countries
+// console.log(Object.keys(CITY_DATA));
+fields.country.innerHTML = '<option value="">Select Country</option>';
+Object.keys(CITY_DATA).forEach((key) => {
+    const opt = document.createElement("option");
+    opt.value = key;
+    opt.textContent = key;
+    fields.country.appendChild(opt);
+});
+
+// Map city and country code with Country Selected -> change
+
+fields.country.addEventListener("change", (event) => {
+    // load city based on country and load country code
+    //   console.log("Event -- ", event);
+    let selectedCountry = fields.country.value;
+    fields.city.innerHTML = '<option value="">Select City</option>';
+
+    if (CITY_DATA[selectedCountry]) {
+        // load cities
+        CITY_DATA[selectedCountry].forEach((city) => {
+            const opt = document.createElement("option");
+            opt.value = city;
+            opt.textContent = city;
+            fields.city.appendChild(opt);
+        });
+        fields.city.disabled = false;
+    } else {
+        fields.city.disabled = true;
+    }
+
+    if (COUNTRY_TO_CODE[selectedCountry]) {
+        //Load country code
+
+        Object.keys(COUNTRY_TO_CODE).forEach((key) => {
+            const opt = document.createElement("option");
+            opt.value = COUNTRY_TO_CODE[key];
+            opt.textContent = COUNTRY_TO_CODE[key];
+            fields.countryCode.appendChild(opt);
+        });
+        fields.countryCode.value = COUNTRY_TO_CODE[selectedCountry];
+        fields.countryCode.disabled = false;
+    } else {
+        fields.countryCode.disabled = true;
+    }
+});
+
+//Set  state tountouched for all fields
+const touched = {}
+Object.keys(fields).forEach((key) => (touched[key] = false));
+
+//Logic for validations -> All Inout Fields Validation Functions
+const validators = {
+    firstName: (value) => value.trim() !== "",
+    lastName: (value) => value.trim() !== "",
+    //Regular Expreesion -> Regex (Patterns Match)
+    //No space and common email validation
+    email: (value) => /^\S+@\S+\.\S+$/.test(value),
+    username: (value) => value.trim() !== "" && !/\s/.test(value),
+    password: (value) =>
+        /^(?=.*[A-Z])(?=.*[!@#$%^&*+])(?=.*\d)\S{8,}$/.test(value),
+    country: (value) => value.trim() !== "",
+    city: (value) => value.trim() !== "",
+    phone: (value) => /^\d{7,15}$/.test(value),
+};
+
