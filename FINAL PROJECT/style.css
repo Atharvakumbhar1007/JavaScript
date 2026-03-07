@@ -1,60 +1,60 @@
 * {
-    box- sizing: border - box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 html {
-    background - color: #ebe8e8;
+    background-color: #ebe8e8;
 }
 
 body {
-    font - family: Arial, sans - serif;
+    font-family: Arial, sans-serif;
     padding: 20px;
 }
 
-.form - group {
-    margin - bottom: 10px;
+.form-group {
+    margin-bottom: 10px;
 }
 
 label {
     display: block;
-    margin - bottom: 4px;
+    margin-bottom: 4px;
 }
 
 input,
 select,
 button {
     padding: 8px;
-    width: 100 %;
-    margin - bottom: 5px;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .error {
     color: red;
-    font - size: 14px;
+    font-size: 14px;
 }
 
 /* Loader animation */
 .loader {
-    margin - top: 30px;
+    margin-top: 30px;
     width: 60px;
     height: 25px;
     border: 2px solid;
-    box - sizing: border - box;
-    border - radius: 50 %;
+    box-sizing: border-box;
+    border-radius: 50%;
     display: grid;
     animation: l2 2s infinite linear;
 }
 
-.loader:: before,
+.loader::before,
 .loader::after {
     content: "";
-    grid - area: 1 / 1;
+    grid-area: 1/1;
     border: inherit;
-    border - radius: 50 %;
+    border-radius: 50%;
     animation: inherit;
-    animation - duration: 3s;
+    animation-duration: 3s;
 }
 
 .loader::after {
@@ -62,7 +62,7 @@ button {
 }
 
 @keyframes l2 {
-    100 % {
+    100% {
         transform: rotate(calc(var(--s, 1) * 1turn));
     }
 }
@@ -72,21 +72,21 @@ button {
 }
 
 #weather {
-    margin - top: 20px;
+    margin-top: 20px;
 }
 
-.forecast - item {
+.forecast-item {
     margin: 8px 0;
     padding: 8px;
     border: 1px solid #ccc;
-    border - radius: 4px;
+    border-radius: 4px;
 }
 
 #weather {
-    margin - top: 20px;
+    margin-top: 20px;
     opacity: 0;
     /* start hidden */
-    transition: opacity 0.6s ease -in;
+    transition: opacity 0.6s ease-in;
 }
 
 #weather.show {
@@ -94,14 +94,14 @@ button {
     /* fade-in */
 }
 
-.flag - image {
+.flag-image {
     width: 250px;
     height: 150px;
-    object - fit: cover;
+    object-fit: cover;
 }
 
 .error {
     width: 200px;
     height: 200px;
-    object - fit: cover;
+    object-fit: cover;
 }
